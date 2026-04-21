@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="DGIST Orbit icon">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d1b33" />
+      <stop offset="100%" stop-color="#09111f" />
+    </linearGradient>
+    <linearGradient id="ring" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#61d5ff" />
+      <stop offset="100%" stop-color="#9dff8f" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#bg)" />
+  <circle cx="256" cy="256" r="84" fill="#13284b" stroke="#dff7ff" stroke-width="18" />
+  <ellipse cx="256" cy="256" rx="176" ry="98" fill="none" stroke="url(#ring)" stroke-width="24" transform="rotate(-18 256 256)" />
+  <ellipse cx="256" cy="256" rx="134" ry="194" fill="none" stroke="#4ca8ff" stroke-opacity="0.5" stroke-width="12" transform="rotate(32 256 256)" />
+  <circle cx="390" cy="195" r="22" fill="#9dff8f" />
+  <path d="M214 233h85c32 0 58 25 58 57 0 40-29 67-81 67h-62V154h59c46 0 74 23 74 58 0 18-8 33-23 44-16 11-34 17-53 17h-57" fill="none" stroke="#eef4ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="20" />
+</svg>

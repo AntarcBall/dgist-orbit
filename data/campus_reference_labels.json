@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "source": "Seeded from the user-provided DGIST white reference map on 2026-04-20. Coordinates are approximate normalized positions in reference-map space and should be corrected after overlay review.",
+  "labels": [
+    {
+      "id": "e6",
+      "displayName": "에너지시스템공학관 E6동",
+      "shortLabel": "E6",
+      "kind": "academic",
+      "referenceCenterNorm": [0.20, 0.20],
+      "matchHints": ["northwest cluster", "large rectangle", "left upper block"],
+      "confidence": 0.72
+    },
+    {
+      "id": "e5",
+      "displayName": "로봇및기계전자공학관 E5동",
+      "shortLabel": "E5",
+      "kind": "academic",
+      "referenceCenterNorm": [0.18, 0.28],
+      "matchHints": ["northwest vertical slab", "left upper-middle"],
+      "confidence": 0.72
+    },
+    {
+      "id": "e4",
+      "displayName": "뇌과학관 E4동",
+      "shortLabel": "E4",
+      "kind": "academic",
+      "referenceCenterNorm": [0.18, 0.36],
+      "matchHints": ["left middle block", "west academic band"],
+      "confidence": 0.67
+    },
+    {
+      "id": "e7",
+      "displayName": "컨실리언스홀 E7동",
+      "shortLabel": "E7",
+      "kind": "public",
+      "referenceCenterNorm": [0.23, 0.42],
+      "matchHints": ["center-left complex", "adjacent to E8"],
+      "confidence": 0.61
+    },
+    {
+      "id": "e2",
+      "displayName": "화학물리학관 E2동",
+      "shortLabel": "E2",
+      "kind": "academic",
+      "referenceCenterNorm": [0.15, 0.54],
+      "matchHints": ["left lower-middle", "west lower academic band"],
+      "confidence": 0.72
+    },
+    {
+      "id": "e1",
+      "displayName": "대학본부 E1동",
+      "shortLabel": "E1",
+      "kind": "admin",
+      "referenceCenterNorm": [0.18, 0.66],
+      "matchHints": ["left lower block", "southwest academic band"],
+      "confidence": 0.68
+    },
+    {
+      "id": "e8",
+      "displayName": "학술정보관 E8동",
+      "shortLabel": "E8",
+      "kind": "library",
+      "referenceCenterNorm": [0.37, 0.36],
+      "matchHints": ["small central-west block", "near canal"],
+      "confidence": 0.78
+    },
+    {
+      "id": "r6",
+      "displayName": "차세대반도체융합연구소 R6동",
+      "shortLabel": "R6",
+      "kind": "research",
+      "referenceCenterNorm": [0.53, 0.46],
+      "matchHints": ["center research block", "large central rectangle"],
+      "confidence": 0.83
+    },
+    {
+      "id": "r5",
+      "displayName": "차세대융복합연구센터 R5동",
+      "shortLabel": "R5",
+      "kind": "research",
+      "referenceCenterNorm": [0.66, 0.49],
+      "matchHints": ["right of R6", "east-central research block"],
+      "confidence": 0.8
+    },
+    {
+      "id": "r4",
+      "displayName": "로봇시스템IT융합연구동 R4동",
+      "shortLabel": "R4",
+      "kind": "research",
+      "referenceCenterNorm": [0.58, 0.56],
+      "matchHints": ["south of R6/R5", "center-right rectangular building"],
+      "confidence": 0.77
+    },
+    {
+      "id": "e15",
+      "displayName": "아워홈식당 E15동",
+      "shortLabel": "E15",
+      "kind": "dining",
+      "referenceCenterNorm": [0.82, 0.50],
+      "matchHints": ["far east building", "near roundabout"],
+      "confidence": 0.86
+    },
+    {
+      "id": "r7",
+      "displayName": "산학협력관 R7동",
+      "shortLabel": "R7",
+      "kind": "research",
+      "referenceCenterNorm": [0.49, 0.88],
+      "matchHints": ["south parking band", "near lower campus edge"],
+      "confidence": 0.79
+    },
+    {
+      "id": "s1",
+      "displayName": "종합체육관 S1동",
+      "shortLabel": "S1",
+      "kind": "sports",
+      "referenceCenterNorm": [0.86, 0.93],
+      "matchHints": ["southeast sports complex", "large athletic building"],
+      "confidence": 0.88
+    },
+    {
+      "id": "h501",
+      "displayName": "국제관 H501동",
+      "shortLabel": "H501",
+      "kind": "housing",
+      "referenceCenterNorm": [0.97, 0.95],
+      "matchHints": ["far southeast housing block", "east of S1"],
+      "confidence": 0.66
+    },
+    {
+      "id": "imbank",
+      "displayName": "iM뱅크",
+      "shortLabel": "BANK",
+      "kind": "service",
+      "referenceCenterNorm": [0.73, 0.38],
+      "matchHints": ["east central service point", "near sports fields and parking"],
+      "confidence": 0.74
+    },
+    {
+      "id": "sangdongji-main",
+      "displayName": "상동지",
+      "shortLabel": "POND",
+      "kind": "water",
+      "referenceCenterNorm": [0.63, 0.24],
+      "matchHints": ["large east-central pond", "north of R5/R6"],
+      "confidence": 0.91
+    },
+    {
+      "id": "sangdongji-north",
+      "displayName": "상동지 북측",
+      "shortLabel": "POND-N",
+      "kind": "water",
+      "referenceCenterNorm": [0.75, 0.10],
+      "matchHints": ["small northeast pond"],
+      "confidence": 0.89
+    }
+  ]
+}

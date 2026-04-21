@@ -1,0 +1,9 @@
+{
+  "name": "dgist-orbit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DGIST campus exploration RPG web game MVP",
+  "scripts": {
+    "start": "python3 -m http.server 4173"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "DGIST Orbit",
+  "short_name": "Orbit",
+  "description": "DGIST 캠퍼스를 배경으로 한 탐사형 RPG 웹게임",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#09111f",
+  "theme_color": "#09111f",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "./icons/orbit-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

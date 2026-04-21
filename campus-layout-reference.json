@@ -1,0 +1,98 @@
+{
+  "source": {
+    "type": "user_provided_map_screenshot",
+    "imagePath": "/home/motor/.openclaw/media/inbound/file_8---014f1723-2760-402b-8859-fbf3534ab37a.jpg",
+    "imageSize": {
+      "width": 592,
+      "height": 1280
+    },
+    "note": "Approximate building footprints and centers inferred from the labeled white DGIST campus map screenshot."
+  },
+  "anchor": {
+    "label": "E7",
+    "name": "컨실리언스홀",
+    "imageCenter": { "x": 330, "y": 616 },
+    "gameCoord": { "lat": 35.69652, "lon": 128.45416 },
+    "usage": "Use E7 as the initial georeference anchor, then project other buildings by relative image-space offsets before refining against satellite imagery."
+  },
+  "buildings": [
+    {
+      "label": "E1",
+      "name": "대학본부",
+      "bbox": { "x": 158, "y": 847, "width": 186, "height": 110 },
+      "center": { "x": 251, "y": 902 },
+      "relativeFromE7": { "dx": -79, "dy": 286 },
+      "normalizedFromE7": { "dx": -0.1334, "dy": 0.2234 },
+      "projectedCoord": { "lat": 35.69069, "lon": 128.453037 }
+    },
+    {
+      "label": "E2",
+      "name": "화학물리학관",
+      "bbox": { "x": 95, "y": 706, "width": 195, "height": 118 },
+      "center": { "x": 193, "y": 765 },
+      "relativeFromE7": { "dx": -137, "dy": 149 },
+      "normalizedFromE7": { "dx": -0.2314, "dy": 0.1164 },
+      "projectedCoord": { "lat": 35.693483, "lon": 128.452212 }
+    },
+    {
+      "label": "E3",
+      "name": "전기전자컴퓨터공학관",
+      "bbox": { "x": 79, "y": 545, "width": 221, "height": 105 },
+      "center": { "x": 190, "y": 598 },
+      "relativeFromE7": { "dx": -140, "dy": -18 },
+      "normalizedFromE7": { "dx": -0.2365, "dy": -0.0141 },
+      "projectedCoord": { "lat": 35.696887, "lon": 128.452169 }
+    },
+    {
+      "label": "E4",
+      "name": "뇌과학관",
+      "bbox": { "x": 88, "y": 470, "width": 214, "height": 82 },
+      "center": { "x": 195, "y": 511 },
+      "relativeFromE7": { "dx": -135, "dy": -105 },
+      "normalizedFromE7": { "dx": -0.2280, "dy": -0.0820 },
+      "projectedCoord": { "lat": 35.69866, "lon": 128.45224 }
+    },
+    {
+      "label": "E5",
+      "name": "로봇및기계전자공학관",
+      "bbox": { "x": 121, "y": 333, "width": 225, "height": 146 },
+      "center": { "x": 234, "y": 406 },
+      "relativeFromE7": { "dx": -96, "dy": -210 },
+      "normalizedFromE7": { "dx": -0.1622, "dy": -0.1641 },
+      "projectedCoord": { "lat": 35.700801, "lon": 128.452795 }
+    },
+    {
+      "label": "E6",
+      "name": "에너지시스템공학관",
+      "bbox": { "x": 167, "y": 250, "width": 248, "height": 150 },
+      "center": { "x": 291, "y": 325 },
+      "relativeFromE7": { "dx": -39, "dy": -291 },
+      "normalizedFromE7": { "dx": -0.0659, "dy": -0.2273 },
+      "projectedCoord": { "lat": 35.702452, "lon": 128.453605 }
+    },
+    {
+      "label": "E7",
+      "name": "컨실리언스홀",
+      "bbox": { "x": 258, "y": 480, "width": 144, "height": 272 },
+      "center": { "x": 330, "y": 616 },
+      "relativeFromE7": { "dx": 0, "dy": 0 },
+      "normalizedFromE7": { "dx": 0, "dy": 0 },
+      "projectedCoord": { "lat": 35.69652, "lon": 128.45416 }
+    },
+    {
+      "label": "E8",
+      "name": "학술정보관",
+      "bbox": { "x": 448, "y": 505, "width": 110, "height": 118 },
+      "center": { "x": 503, "y": 564 },
+      "relativeFromE7": { "dx": 173, "dy": -52 },
+      "normalizedFromE7": { "dx": 0.2922, "dy": -0.0406 },
+      "projectedCoord": { "lat": 35.69758, "lon": 128.45662 }
+    }
+  ],
+  "nextStepHints": [
+    "Georeference E7 against the satellite basemap first.",
+    "Project E1 to E8 by the relative image-space offsets to get first-pass lat/lon centers. This pass has now been recorded in projectedCoord for each building.",
+    "Then refine each center against visible building footprints in satellite imagery or a vector basemap.",
+    "If desired later, convert each bbox into rotated approximate campus polygons instead of center points only."
+  ]
+}

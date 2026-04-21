@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DGIST Orbit</title>
+    <meta
+      name="description"
+      content="DGIST 캠퍼스를 배경으로 한 포켓몬고 느낌의 탐사형 RPG 웹게임 MVP"
+    />
+    <meta name="theme-color" content="#09111f" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/orbit-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/orbit-icon.svg" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-brand">
+          <div class="hero-title-row">
+            <p class="eyebrow">DGIST ORBIT</p>
+            <span class="hero-status-label">CAMPUS SIGNAL OPS</span>
+          </div>
+          <h1>DGIST Orbit</h1>
+          <p class="hero-copy">현재 배치, 소속, 안정도, 앱 셸 상태를 한 줄 작전 바에서 확인한다.</p>
+        </div>
+        <div class="hero-utility">
+          <div class="install-row">
+            <button id="install-button" class="ghost install-button" hidden>홈 화면에 추가</button>
+            <span id="install-status" class="muted install-status">앱 셸 준비 중...</span>
+          </div>
+          <div class="hero-stats" id="hero-stats"></div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="map-card panel">
+          <div class="panel-head map-panel-head">
+            <div>
+              <h2>캠퍼스 지도</h2>
+              <p>구역을 눌러 이동, 스캔, 전투, 퀘스트 진행</p>
+            </div>
+            <div class="scan-cta-cluster">
+              <div id="scan-target-legend" class="scan-target-legend" aria-live="polite"></div>
+              <button id="scan-button" class="primary">주변 스캔</button>
+            </div>
+          </div>
+          <div class="map-stage">
+            <div id="map"></div>
+            <div id="zone-focus" class="zone-focus"></div>
+          </div>
+          <div class="map-legend">
+            <span><i class="dot player"></i> 현재 위치</span>
+            <span><i class="dot zone"></i> 탐사 구역</span>
+            <span><i class="dot boss"></i> 보스 출현</span>
+            <span><i class="ring-swatch"></i> 주변 스캔</span>
+            <span><i class="line-swatch scan"></i> 인접 신호</span>
+            <span><i class="line-swatch secure"></i> 확보 회랑</span>
+            <span><i class="line-swatch contested"></i> 경계 회랑</span>
+            <span><i class="line-swatch unstable"></i> 교란 회랑</span>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel status-panel">
+            <div class="panel-head compact">
+              <h2>레인저 상태</h2>
+              <button id="rest-button" class="ghost">휴식</button>
+            </div>
+            <div id="status-grid" class="status-grid"></div>
+            <div class="xp-bar-wrap">
+              <div id="xp-bar" class="xp-bar"></div>
+            </div>
+            <p id="rank-text" class="muted"></p>
+          </section>
+
+          <section class="panel stability-panel">
+            <div class="panel-head compact">
+              <div>
+                <h2>캠퍼스 안정도</h2>
+                <p class="muted">구역별 안정화와 위험도를 추적</p>
+              </div>
+            </div>
+            <div id="stability-overview" class="stability-overview"></div>
+          </section>
+
+          <section class="panel encounter-panel">
+            <div class="panel-head compact">
+              <h2>현장 로그</h2>
+            </div>
+            <div id="encounter-card" class="encounter-card"></div>
+            <div id="action-buttons" class="action-buttons"></div>
+          </section>
+
+          <section class="panel logistics-panel">
+            <div class="panel-head compact">
+              <div>
+                <h2>현장 도크</h2>
+                <p class="muted">작전과 장비를 한 도크에서 전환</p>
+              </div>
+              <button id="reroll-quest" class="ghost">재배정</button>
+            </div>
+            <div class="logistics-tabs" id="logistics-tabs" role="tablist" aria-label="현장 도크 보기 선택">
+              <button class="logistics-tab active" data-logistics-tab="quests" role="tab" aria-selected="true">작전 목록</button>
+              <button class="logistics-tab" data-logistics-tab="inventory" role="tab" aria-selected="false">장비 및 인벤토리</button>
+            </div>
+            <div class="logistics-panels">
+              <div id="quest-panel" class="logistics-tab-panel active" role="tabpanel">
+                <ul id="quest-list" class="quest-list"></ul>
+              </div>
+              <div id="inventory-panel" class="logistics-tab-panel" role="tabpanel" hidden>
+                <div id="loadout-summary" class="loadout-summary"></div>
+                <p id="loadout-text" class="muted loadout-note"></p>
+                <div id="inventory-list" class="inventory-list"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel ops-panel">
+            <div class="panel-head compact">
+              <div>
+                <h2>작전 콘솔</h2>
+                <p class="muted">인텔과 도감을 한 패널에서 전환</p>
+              </div>
+              <button id="reset-save" class="ghost danger">리셋</button>
+            </div>
+            <div class="ops-tabs" id="ops-tabs" role="tablist" aria-label="작전 콘솔 보기 선택">
+              <button class="ops-tab active" data-ops-tab="intel" role="tab" aria-selected="true">위성 인텔</button>
+              <button class="ops-tab" data-ops-tab="dossier" role="tab" aria-selected="false">DGIST 도감</button>
+            </div>
+            <div class="ops-panels">
+              <div id="intel-panel" class="ops-tab-panel active" role="tabpanel">
+                <div id="intel-feed" class="intel-feed"></div>
+              </div>
+              <div id="dossier-panel" class="ops-tab-panel" role="tabpanel" hidden>
+                <div id="dossier-card" class="encounter-card"></div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <template id="quest-item-template">
+      <li class="quest-item">
+        <div>
+          <h3></h3>
+          <p></p>
+        </div>
+        <span class="quest-reward"></span>
+      </li>
+    </template>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>
